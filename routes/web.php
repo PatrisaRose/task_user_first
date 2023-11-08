@@ -19,4 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//kérés, útvonal címe, controller neve, 
+Route::get('/api/tasks', [TaskController::class, 'index']);
+Route::get('/api/tasks/{id}', [TaskController::class, 'show']);
+Route::post('/api/tasks', [TaskController::class, 'store']);
 //require __DIR__ . '/auth.php';
